@@ -1,0 +1,63 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data.SQLite;
+using System.Data;
+
+namespace GesCS.Utility
+{
+    class SqliteHelper
+    {
+        public static string connString = "Data Source=ges.db";
+        SQLiteConnection myConn = new SQLiteConnection();
+
+        public SqliteHelper()
+        {
+            myConn.ConnectionString = connString;
+        }
+        public int ExecuteScalar(string strSQL)
+        {
+            SQLiteCommand sqlCmd = new SQLiteCommand(strSQL, myConn); 
+            myConn.Open();
+            int rs = Convert.ToInt32(sqlCmd.ExecuteScalar());
+            sqlCmd.Dispose();
+            myConn.Close();
+            return rs;
+        }
+
+        public DataSet QueryBySQL(string strSQL)
+        {
+            DataSet ds = new DataSet();
+            myConn.Open();
+            SQLiteDataAdapter sda = new SQLiteDataAdapter(strSQL, myConn);
+            sda.Fill(ds, "ds");
+            myConn.Close();
+            return ds;
+        }
+
+        public int ExecuteNonQuery(string strSQL)
+        {
+            SQLiteCommand sqlCmd = new SQLiteCommand(strSQL, myConn);
+            myConn.Open();
+            int rs = 0;
+            try
+            {
+                rs = sqlCmd.ExecuteNonQuery();
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                //cmd必须dispose掉，否者在大量数据循环调用时，占用大量内存，GC在循环完了后才去释放。
+                sqlCmd.Dispose();
+                myConn.Close();
+            }
+            return rs;
+        }
+
+    }
+}
