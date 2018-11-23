@@ -16,7 +16,9 @@ namespace GesCS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UI.Setting.MenuSetting());
+            //Application.Run(new UI.Setting.MenuSetting());
+            Application.Run(new Test());
+
         }
     }
 }

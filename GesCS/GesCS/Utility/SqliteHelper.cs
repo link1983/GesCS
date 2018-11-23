@@ -10,7 +10,7 @@ namespace GesCS.Utility
 {
     class SqliteHelper
     {
-        public static string connString = "Data Source=ges.db";
+        public static string connString = "Data Source=gescss.db";
         SQLiteConnection myConn = new SQLiteConnection();
 
         public SqliteHelper()

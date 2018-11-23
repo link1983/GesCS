@@ -19,12 +19,17 @@ namespace GesCS.UI.Setting
 
         private void MenuSetting_Load(object sender, EventArgs e)
         {
+            Utility.MenuTreeViewLoader  mn= new Utility.MenuTreeViewLoader();
+            treeView1 = mn.GetTreeView();
+            treeView1.Update();
 
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            Utility.MenuTreeViewLoader mn = new Utility.MenuTreeViewLoader();
+            treeView1 = mn.GetTreeView();
+            treeView1.Update();
         }
 
         private void button1_Click(object sender, EventArgs e)

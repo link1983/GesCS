@@ -34,9 +34,9 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.SQLite, Version=1.0.62.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+    <Reference Include="System.Data.SQLite, Version=1.0.105.1, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\System.Data.SQLite\2010\bin\System.Data.SQLite.dll</HintPath>
+      <HintPath>..\..\..\TotalSearch\TotalSearch\bin\Debug\System.Data.SQLite.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -75,6 +75,7 @@
     <Compile Include="UI\Setting\MenuSetting.Designer.cs">
       <DependentUpon>MenuSetting.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utility\MenuTreeViewLoader.cs" />
     <Compile Include="Utility\SqliteHelper.cs" />
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -94,6 +95,7 @@
     <EmbeddedResource Include="UI\Setting\MenuSetting.resx">
       <DependentUpon>MenuSetting.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Data\gescs.db" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
