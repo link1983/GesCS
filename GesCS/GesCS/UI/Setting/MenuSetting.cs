@@ -20,16 +20,12 @@ namespace GesCS.UI.Setting
         private void MenuSetting_Load(object sender, EventArgs e)
         {
             Utility.MenuTreeViewLoader  mn= new Utility.MenuTreeViewLoader();
-            treeView1 = mn.GetTreeView();
-            treeView1.Update();
-
+            mn.GetTreeView(treeView1);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Utility.MenuTreeViewLoader mn = new Utility.MenuTreeViewLoader();
-            treeView1 = mn.GetTreeView();
-            treeView1.Update();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -40,10 +36,15 @@ namespace GesCS.UI.Setting
                 return;
             }
             //添加根节点
-            TreeNode tn = new TreeNode();
-            tn.Text = textBox1.Text.Trim();
-            tn.Tag = textBox2.Text.Trim();
-            treeView1.Nodes.Add(tn);
+            Utility.SqliteHelper sh = new Utility.SqliteHelper();
+            sh.ExecuteNonQuery($"insert into sys_menu (text,tag,xh,fid) values('{textBox1.Text.Trim()}','{textBox2.Text.Trim()}',{Convert.ToInt32(textBox3.Text.Trim())},0)");
+            //TreeNode tn = new TreeNode();
+            //tn.Text = textBox1.Text.Trim();
+            //tn.Tag = textBox2.Text.Trim();
+            //treeView1.Nodes.Add(tn);
+            Utility.MenuTreeViewLoader mn = new Utility.MenuTreeViewLoader();
+            treeView1.Nodes.Clear();
+            mn.GetTreeView(treeView1);
             textBox1.Text = "";
             textBox2.Text = "";
         }
@@ -81,6 +82,26 @@ namespace GesCS.UI.Setting
             treeView1.SelectedNode.Nodes.Add(tn);
             textBox1.Text = "";
             textBox2.Text = "";
+        }
+
+        private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            Utility.SqliteHelper sh = new Utility.SqliteHelper();
+            DataSet ds = sh.QueryBySQL($"select * from sys_menu where text='{treeView1.SelectedNode.Text}'");
+            DataRow dr = ds.Tables[0].Rows[0];
+            textBox1.Text = dr["text"].ToString();
+            textBox2.Text = dr["tag"].ToString();
+            textBox3.Text = dr["xh"].ToString();
+            textBox4.Text = dr["id"].ToString();
+
+
+
+
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            NewBiz
         }
     }
 }

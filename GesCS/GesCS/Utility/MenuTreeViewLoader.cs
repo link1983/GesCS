@@ -18,9 +18,8 @@ namespace GesCS.Utility
             rows = ds.Tables[0].Rows;
         }
 
-        public TreeView GetTreeView()
+        public void GetTreeView(TreeView tv)
         {
-            TreeView tv = new TreeView();
 
             foreach (DataRow dr in rows)
             {
@@ -34,7 +33,6 @@ namespace GesCS.Utility
                 }
             }
 
-            return tv;
         }
 
         private void AddNode(TreeNode tn,DataRow dr)

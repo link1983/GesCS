@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.13
+VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GesCS", "GesCS\GesCS.csproj", "{DE4F3798-BD80-4840-8BBF-41E627F239EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewBiz", "NewBiz\NewBiz.csproj", "{060AF284-55CC-4D75-B8BF-3E3582D623C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{DE4F3798-BD80-4840-8BBF-41E627F239EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE4F3798-BD80-4840-8BBF-41E627F239EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE4F3798-BD80-4840-8BBF-41E627F239EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{060AF284-55CC-4D75-B8BF-3E3582D623C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{060AF284-55CC-4D75-B8BF-3E3582D623C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{060AF284-55CC-4D75-B8BF-3E3582D623C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{060AF284-55CC-4D75-B8BF-3E3582D623C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

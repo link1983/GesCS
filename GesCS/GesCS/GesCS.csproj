@@ -36,7 +36,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite, Version=1.0.105.1, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\TotalSearch\TotalSearch\bin\Debug\System.Data.SQLite.dll</HintPath>
+      <HintPath>..\..\System.Data.SQLite.DLL</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -109,6 +109,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\NewBiz\NewBiz.csproj">
+      <Project>{060af284-55cc-4d75-b8bf-3e3582d623c1}</Project>
+      <Name>NewBiz</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
